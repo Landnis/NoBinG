@@ -1,0 +1,44 @@
+.imgLogo{
+    width:100px;
+    margin:auto;
+}
+ion-header{
+    background-color:lightskyblue;
+}
+
+.BackgroundPanel{
+    padding: 5px;
+    margin: auto;
+    width:100%;
+    
+    background-color: lightgray;
+}
+.CarsCards{
+  position: relative;
+    padding: 5px;
+    margin: auto;
+    width:100%;
+    height:auto;
+    background-color: lightgray;
+  }
+  .carClass{
+    text-align: left;
+  }
+  .listBackground{
+    width:100%;
+    background-color: mintcream;
+    h3{
+      text-align: center;
+    }
+  }
+  .map{
+    position: relative;
+    left:40%;
+    top:15%;
+    font-size: 100px;
+    color:black;
+    opacity:80%;
+   }
+  .imgLogo{
+    background-image: url('./LogoMakr-52eUU7.png');
+  }

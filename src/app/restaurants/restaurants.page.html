@@ -1,0 +1,133 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="restauranBackground">
+  
+    <form #form="ngForm" (ngSubmit)="getValues(form)">
+      <ion-list style="background-color:lightgrey">
+        <h1 style="text-align: center;">Restaurants</h1>
+      <h3 style="text-align: center;">Ψάξε Εστιατόρια σε όποια Τοποθεσία Επιθυμείς..</h3>
+      <ion-searchbar showCancelButton="never" name="Location" ngModel required></ion-searchbar>
+    
+    </ion-list>
+    </form>
+
+  <div class="restaurantCards">
+    <ion-slides>
+    <ion-slide>
+    <ion-card style="background-color:lightsteelblue">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/1f/17/39/caption.jpg" alt="">
+      <h1 style="text-align: center;">Τεβέρνα 'Το Καταφύγιο'</h1>
+      <p style="text-align: left;">Στον οικισμό του Παλαιού Αγ. Αθανασίου με την μαγευτική θεά στο Βόρα βρίσκεται η ταβέρνα "Καταφύγιο".
+        Η μεσογειακή και η παραδοσιακή κουζίνα που διαθέτουμε είναι ικανή να αφήσει τις καλύτερες εντυπώσεις και στον πιο δύσκολο ουρανίσκο.
+        Ανοιχτά όλο το χρόνο από το πρωί και έως αργά το βράδυ σας περιμένει με παραδοσιακούς μεζέδες μαγειρεμένους από έμπειρους μάγειρες πάντα με φρέσκα υλικά και γνήσιες γεύσεις μαγειρεμένες στον παραδοσιακό πέτρινο φούρνο
+      </p>
+      <p style="text-align: left;"><ion-icon name="location"></ion-icon>  Άγιος Αθανάσιος,Πέλλας </p>
+      <p style="text-align: left;"> <ion-icon name="pencil"></ion-icon>  Κριτική: <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>, Εξαιρετικό</p>
+      <p style="text-align: left;"> Κουζίνα: Μεσογειακή, Ελληνική</p>
+      <p style="text-align: left;"> Ιστοσελίδα: <a href="http://www.katafygio.gr/gr/kaimaktsalan-palios-agios-athanasios-tavern/"> 'Το Καταφύγιο'</a></p>
+      <p style="text-align: left;"> <ion-icon name="map"></ion-icon>  Χάρτης: <a href="https://www.google.com/maps/place/Katafygio+Tavern/@40.840861,21.7676396,17z/data=!3m1!4b1!4m5!3m4!1s0x1357a4cba76c6293:0xf6f8a055b2b1d1a!8m2!3d40.840857!4d21.7698283">Δες στον Χάρτη</a></p>
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-card style="background-color:lightsteelblue">
+      <img src="https://menumenou.gr/wp-content/uploads/2020/10/menu-menou-eisodos-scaled.jpg" alt="">
+      <h1 style="text-align: center;">Εστιατόριο <br> Menu με...νου</h1>
+      <p style="text-align: left;">
+        Αξιοποιώντας τα παραδοσιακά ελληνικά προϊόντα,
+        το εστιατόριο Menu μενου σας υπόσχεται ένα ταξίδι γεύσεων στην δημιουργική Μεσογειακή κουζίνα. 
+        Η ιδιαίτερη ατμόσφαιρα του χώρου και το εξυπηρετικό προσωπικό μας είναι πάντα στην διάθεση σας. 
+        Βασικό, η επιλογή των ατόμων με τους οποίους θα μοιραστείτε το τραπέζι σας, 
+        για μια γευστική εμπειρία που θα θελήσετε να επαναλάβετε ξανά και ξανά!
+      </p>
+      <p style="text-align: left;"> <ion-icon name="location"></ion-icon> Αλεξάνδρου Παπαναστασίου 87Δ, Θεσσαλονίκη 54453 Ελλάδα </p>
+      <p style="text-align: left;"> <ion-icon name="pencil"></ion-icon>  Κριτική: <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>, Εξαιρετικό,Τέλειο</p>
+      <p style="text-align: left;"> Κουζίνα: Θαλασσινά</p>
+      <p style="text-align: left;"> Ιστοσελίδα: <a href="https://menumenou.gr/en/home/"> 'Menu με...νου'</a></p>
+      <p style="text-align: left;"> <ion-icon name="map"></ion-icon>  Χάρτης: <a href="https://www.google.com/maps/place/Menu+%CE%BC%CE%B5...%CE%BD%CE%BF%CF%85/@40.6080791,22.9644911,17z/data=!3m1!4b1!4m5!3m4!1s0x14a838c3242fc37f:0xdb127c1acdbd26d1!8m2!3d40.6080791!4d22.9666798">Δες στον Χάρτη</a></p>
+      
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card style="background-color:lightsteelblue">
+      <img src="https://www.balaouro.gr/wp-content/uploads/2016/04/ouzeri-balaouro-kavala-06.jpg" alt="">
+      <h1 style="text-align: center;">Τεβέρνα-Ουζερί 'Μπαλαούρο'</h1>
+      <p style="text-align: left;">Η ταβέρνα ουζερί Μπαλαούρο βρίσκεται στην Καβάλα, 
+        στην περιοχή Σφαγεία, πάνω στο γραφικό λιμανάκι της γειτονιάς. 
+        Πρόκειται για μια οικογενειακή επιχείρηση που λειτουργεί από το 2004 και προσφέρει… 
+        γευστικούς πειρασμούς, που παρασκευάζονται με αγάπη και μεράκι. 
+        Δοκιμάστε καλομαγειρεμένα φαγητά, φρέσκα ψάρια, ουζομεζέδες, κρεατικά και πολλά λαχταριστά ορεκτικά. 
+        Χρησιμοποιούμε πάντοτε τις καλύτερες πρώτες ύλες και τα πιο φρέσκα προϊόντα!</p>
+      
+      <p style="text-align: left;"> <ion-icon name="location" slot="start"></ion-icon> Θασου 19 Λιμανακι Σφαγειων, Καβάλα 652 01 Ελλάδα </p>
+      <p style="text-align: left;"> <ion-icon name="pencil"></ion-icon>  Κριτική:<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>, Καλό</p>
+      <p style="text-align: left;"> Κουζίνα: Θαλασσινά, Μεσογειακή, Ευρωπαϊκή, Ελληνική</p>
+      <p style="text-align: left;"> Ιστοσελίδα: <a href="https://www.balaouro.gr/"> 'Μπαλαούρο'</a></p>
+      <p style="text-align: left;"> <ion-icon name="map"></ion-icon>  Χάρτης: <a href="https://www.google.gr/maps/place/Balaouro/@40.942162,24.4229729,17z/data=!4m12!1m6!3m5!1s0x14aebb73b0b9a8c5:0xc25dec9a970467a0!2sBalaouro!8m2!3d40.942158!4d24.4251616!3m4!1s0x14aebb73b0b9a8c5:0xc25dec9a970467a0!8m2!3d40.942158!4d24.4251616">Δες στον Χάρτη</a></p>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card style="background-color:lightsteelblue">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/01/7a/92/46/the-restaurant-s-entrance.jpg" alt="">
+      <h1 style="text-align: center;">Εστιατόριο <br> 'Kontosoros'</h1>
+      <p style="text-align: left;">Το εστιατόριο Kontosoros Βρίσκεται στο Ξηνό Νερό Φλώρινας και είναι
+        ένας ζεστός και φιλόξενος χώρος για να ζήσετε ευχάριστες στιγμές, 
+        αλλά και γευστικές εμπειρίες που θα σας καταπλήξουν. 
+        Με σεβασμό στην τοπική αρχιτεκτονική, με αγάπη για την τοπική κουζίνα και το καλό κρασί, 
+        με φιλόξενη διάθεση, σας περιμένουμε να μας γνωρίσετε.</p>
+      
+      <p style="text-align: left;"> <ion-icon name="location" slot="start"></ion-icon>Ξηνό Νερό, Φλώρινα 530 72 Ελλάδα</p>
+      <p style="text-align: left;"> <ion-icon name="pencil"></ion-icon>  Κριτική:<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>, Εξαιρετικό ,Τέλειο</p>
+      <p style="text-align: left;"> Κουζίνα: Μεσογειακή, Ελληνική</p>
+      <p style="text-align: left;"> Ιστοσελίδα: <a href="http://www.kontosoros.gr/"> 'Kontosoros'</a></p>
+      <p style="text-align: left;"> <ion-icon name="map"></ion-icon>  Χάρτης: <a href="https://www.google.com/maps/dir//40.691906,21.626322/@40.7086775,21.5543971,12.41z">Δες στον Χάρτη</a></p>
+    </ion-card>
+  </ion-slide>
+
+
+  </ion-slides>
+
+</div>
+</div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" color="primary">
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

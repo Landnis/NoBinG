@@ -1,0 +1,100 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="hotelsBackground">
+    <form #form="ngForm" (ngSubmit)="getValues(form)">
+    <ion-card>
+      <h1 style="text-align: center;">Hotels</h1>
+     <h1 style="text-align: center;">Βρες Ξενοδοχείο Στην Περιοχή της Αρεσκείας Σου..</h1>
+      <ion-item>
+        <ion-label>Περιοχή </ion-label>
+        <ion-icon name="map" slot="start"></ion-icon>
+        <ion-select  okText="Ok" cancelText="Cancel" name="Location" ngModel required>
+          <ion-select-option *ngFor="let user of OnlyCitiesHotels" >{{user.City}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card>
+
+  </form>
+</div>
+  <div class="Background">
+  <ion-row *ngFor="let header of image" class="category-block">  
+      <div *ngFor="let product of header.products" >
+        <div *ngIf="form.value.Location==product.name ">
+          <h1 style="text-align: center;"> Welcome to {{ product.name}}</h1>
+          <ion-icon name="location" class="map"></ion-icon>
+
+          <img src="{{product.url}}" alt="">
+          <p>
+            {{product.comments}}
+          </p>
+          
+        </div>
+        
+      </div>
+       
+  </ion-row>
+  <form #form="ngForm" (ngSubmit)="getValues(form)" >
+    <ion-card *ngFor="let user of AllHotels" (click)="openDetailsWithQueryParams(user)" style="background-color:lightsteelblue">
+    <div *ngIf="form.value.Location==user.City">
+      <img src="{{user.Hotels_image}}" alt="">
+      <h1 style="text-align: center;">{{user.Hotel_name}}</h1>
+      <p style="text-align: left;">
+        {{user.comments}}
+      </p>
+
+      <p style="text-align: left;"> <ion-icon name="location"></ion-icon> {{user.Address}}</p>
+      <p style="text-align: left;"> <ion-icon name="star-half"></ion-icon>  Αστέρων: {{user.evaluation_stars}}</p>
+      <p style="text-align: left;"> Ιστοσελίδα: <a href="{{user.site}}">{{user.Hotel_name}}</a></p>
+      <p style="text-align: left;"> <ion-icon name="call"></ion-icon> {{user.Phone}}</p>
+      <ion-button type="submit" expand="block"color="light" (click)="openDetailsWithQueryParams(user)" >Περισσότερα</ion-button>
+    
+  </div>
+  </ion-card>
+</form>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" >
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed" color="primary"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

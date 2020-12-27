@@ -1,0 +1,49 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon name="cart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+<div class="CarsOptions">
+  <div *ngFor="let cat of items" class="category-block">
+    <ion-row no-padding class="category-banner">
+      <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+        {{cat.category}}
+      </ion-col>
+    </ion-row>
+  
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let product of cat.products">
+     <div *ngIf="cat.expanded">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            {{ product.name }} - ${{ product.price }}
+          </ion-card-title>
+
+          <ion-card-content>
+           
+              <img src="https://i0.wp.com/travelvibe.eu/wp-content/uploads/2019/11/%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1-101-%CF%86%CF%89%CF%84%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B5%CF%82-%CE%B1%CF%80%CF%8C-drone-%CF%80%CE%BF%CF%85-%CE%B8%CE%B1-%CF%83%CE%B5-%CE%B5%CE%BD%CF%84%CF%85%CF%80%CF%89%CF%83%CE%B9%CE%AC%CF%83%CE%BF%CF%85%CE%BD.13.jpg?w=870&ssl=1 " alt="">
+            
+            <ion-button expand="full" (click)="addToCart(product)">Find a {{ product.name }} in your place </ion-button>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+</div>
+</ion-content>

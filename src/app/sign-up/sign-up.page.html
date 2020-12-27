@@ -1,0 +1,35 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="signup-Background">
+  <form #form="ngForm" (ngSubmit)="signUpUser(form)">
+    <h1 style="text-align: center;">Sign Up</h1>
+    <div class="imgForm">
+    <img src="https://www.aushidhi.org/images/login-img.png">
+  </div>
+    <div>
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input name="password" type="password" placeholder="password" ngModel required></ion-input>
+      </ion-item>
+      <div style="text-align:center;margin:auto;">
+        <ion-button type="submit" [disabled]="form.invalid">Sign Up</ion-button>
+      </div>
+    </div>
+  </form> 
+  <div  style="text-align:center;margin:auto;">
+    <h6 (click)="goToReset()">Forget Password</h6>
+    <h6 (click)="goToLogIn()">Log In</h6>
+  </div>
+  </div>
+</ion-content>
+

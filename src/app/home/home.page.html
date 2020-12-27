@@ -1,20 +1,415 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+    
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <div class="masters">
+    <ion-list  class="listBackground">
+      <h3> Μαγευτικά Μέρη που μπορείς να Επισκευτείς στην Β.Ελλάδα</h3>
+    </ion-list>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header>
+            <ion-card-title>Θεσσαλονίκη</ion-card-title>
+            <ion-card-subtitle>Νύμφη του Θερμαϊκού</ion-card-subtitle>            
+          </ion-card-header>
+          <ion-card-content>
+            
+            <img src="https://urban-wanders.com/wp-content/uploads/2020/04/Most-Instagrammable-Places-in-Thessaloniki-e1587236011213.jpg" alt="">
+           
+            <br>
+            Η Θεσσαλονίκη μια σύγχρονη μεγάλη πόλη, με πάνω από 1 εκατ. κατοίκους, είναι το μεγαλύτερο αστικό κέντρο της Βόρειας Ελλάδας. 
+            Βρίσκεται σε μια εύφορη γη που αναπτύσσεται γύρω από τα ποτάμια Αξιό, Γαλλικό και Λουδία, τις λίμνες Κορώνεια και Βόλβη, αλλά και τις θάλασσες του Θερμαϊκού και 
+            του Στρυμονικού Κόλπου. Κατοικείται από τα προϊστορικά χρόνια και στην περιοχή υπάρχουν ίχνη ζωής από εκείνη την εποχή. 
+            Την πόλη ίδρυσε το 315 π.Χ. ο βασιλιάς των Μακεδόνων Κάσσανδρος, γιος του στρατηγού Αντίπατρου που άφησε σαν επιμελητή στην Μακεδονία ο Μέγας Αλέξανδρος,
+             όταν τόλμησε τη μεγάλη εκστρατεία του στην Ασία. Ο Κάσσανδρος, αφού κυριάρχησε στη μάχη των διαδόχων, παντρεύτηκε την ετεροθαλή αδερφή του Μεγάλου Αλεξάνδρου, τη Θεσσαλονίκη, και ίδρυσε προς τιμήν της την πόλη, ενώνοντας 26 μικρούς οικισμούς, που υπήρχαν εκεί γύρω.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+            <br>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header>
+            <ion-card-title>Καβάλα</ion-card-title>
+            <ion-card-subtitle>H Γαλάζια Πολιτεία της Μακεδονίας</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="https://i0.wp.com/travelvibe.eu/wp-content/uploads/2019/11/%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1-101-%CF%86%CF%89%CF%84%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B5%CF%82-%CE%B1%CF%80%CF%8C-drone-%CF%80%CE%BF%CF%85-%CE%B8%CE%B1-%CF%83%CE%B5-%CE%B5%CE%BD%CF%84%CF%85%CF%80%CF%89%CF%83%CE%B9%CE%AC%CF%83%CE%BF%CF%85%CE%BD.13.jpg?w=870&ssl=1 " alt="">
+            <br>
+            Η ιστορία της πόλης και της περιοχής φτάνει, σύμφωνα με τα ευρήματα, στην προϊστορική εποχή. 
+            Τον αρχικό πυρήνα της αποτελεί η συνοικία της Παναγίας που κατοικείται σχεδόν αδιάκοπα από τον 7ο π.Χ. αιώνα. 
+            Στη μικρή, οχυρή χερσόνησο κλείστηκε η πόλη για 2.500 χρόνια. Στις αρχές του 16ου αιώνα επεκτάθηκε έξω από αυτήν διατηρώντας τα ίδια όρια μέχρι το 1870.
+             Από το 1928 άρχισε να παίρνει τη σημερινή της μορφή.Τη στρατηγική και οικονομική σημασία της στο πέρασμα των αιώνων την οφείλει κυρίως στη θέση της –ήταν σταθμός για τους θαλάσσιους
+              δρόμους της περιοχής–, στην Εγνατία οδό που περνούσε και από εδώ συνδέοντας την Ανατολή με τη Δύση, στο λιμάνι της και στη φυσική οχύρωση της χερσονήσου όπου ήταν κτισμένη η παλιά πόλη.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+            <br>
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Βέροια</ion-card-title>
+            <ion-card-subtitle>Βέροια..Ο προορισμός 4 εποχών.</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="https://www.discovergreece.com/sites/default/files/styles/hd_half/public/2019-11/1_in_kyriotissa_the_christian_neighbourhood_walk_along_the_alleys_of_the_old_town_0.jpg?itok=vhLHF6wu" alt="">
+            <br>
+            Κτισμένη στους πρόποδες του Βερμίου και με τον ποταμό Τριπόταμο να τη διασχίζει, η Βέροια ήταν η δεύτερη σημαντικότερη πόλη,
+             μετά τις Αιγές, στα χρόνια ακμής των αρχαίων Μακεδόνων. Από τον 11ο ως τον 14ο αιώνα υπήρξε η τρίτη σπουδαιότερη πόλη της Βυζαντινής Αυτοκρατορίας,
+              μετά την Κωνσταντινούπολη και τη Θεσσαλονίκη. Αδιάψευστος μάρτυρας της ακμής της αποτελεί ο εντυπωσιακά μεγάλος αριθμός βυζαντινών και μετα-βυζαντινών ναών με πανέμορφες τοιχογραφίες 
+              (σήμερα σώζονται οι 48 από τους 72), που της χάρισε το προσωνύμιο «Μικρή Ιερουσαλήμ».Σήμερα είναι μια σύγχρονη πόλη, η οποία, όμως, διατηρεί τις ιστορικές γειτονιές και πολλά από τα σπουδαία μνημεία της. Ακολουθείστε μας, λοιπόν, σ’ ένα γοητευτικό ταξίδι πίσω στο χρόνο για μια γνωριμία με τον ιστορικό πλούτο της περιοχής
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+           </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Καστοριά</ion-card-title>
+            <ion-card-subtitle>Η Πόλη των Γουναράδων..</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="https://www.travelstyle.gr/wp-content/uploads/2017/03/kastoria-limni.jpg" alt="">
+            <br>
+            Από τις ομορφότερες πόλεις της βόρειας Ελλάδας, πλαισιωμένη από τα επιβλητικά βουνά Γράμμο και Βίτσι,
+             η φημισμένη πόλη των γουναράδων, αντικατοπτρίζεται αιώνες τώρα στα ασάλευτα νερά της λίμνης Ορεστιάδας. 
+             Χτισμένη αμφιθεατρικά, πάνω σε μια στενή χερσόνησο, ξελογιάζει τους επισκέπτες με τα αστείρευτα κάλλη της,
+              την αρχοντιά και τη γαλήνια αύρα της.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+           </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Δράμα</ion-card-title>
+            <ion-card-subtitle>Μια Όμορφη Χριστουγενιάτικη Πόλη της Β.Ελλάδας..</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="http://www.visitgreece.gr/deployedFiles/StaticFiles/Photos/Generic%20Contents/Poleis/Drama%20City%20s275321144_560.jpg" alt="">
+            <br>
+            Στους πρόποδες του επιβλητικού όρους Φαλακρό - βουνό των λουλουδιών το ονομάζουν οι ντόπιοι - σε μια περιοχή κατάφυτη, 
+            με πολλά νερά, είναι χτισμένη η πόλη της Δράμας.Όμορφη και φιλόξενη, με γραφικές γειτονιές, ευρύχωρες πλατείες,
+             χώρους πρασίνου και καλοσυντηρημένα νεοκλασικά αρχοντικά προσφέρεται για χειμερινό τουρισμό αλλά και για φθινοπωρινές και ανοιξιάτικες εξορμήσεις στην ανόθευτη φύση.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+           </ion-card-content>
+        </ion-card>
+      </ion-slide> 
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Γρεβενά</ion-card-title>
+            <ion-card-subtitle>Η πόλη των μανιταριών και της γεωθερμίας</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="http://www.visitgreece.gr/deployedFiles/StaticFiles/Photos/Generic%20Contents/Tourismos_Ypaithrou/valia_calda_560X374.jpg" alt="">
+            <br>
+            Πλαισιωμένα από ψηλά βουνά, κατάφυτα δάση, τρεχούμενα νερά, ποτάμια, χειμάρρους και ρυάκια που συνθέτουν μια πλούσια φύση, τα Γρεβενά, η μακεδονίτικη πόλη με τα γραφικά χωριά, τα εντυπωσιακά πέτρινα γεφύρια και τις παλιές εκκλησίες, δημιουργούν ένα όμορφο σκηνικό, όπου ο άνθρωπος συνυπάρχει αρμονικά με τη φύση. Πόλος έλξης για τους επισκέπτες ο Εθνικός Δρυμός «Βάλια Κάλντα», το Εθνικό Χιονοδρομικό Κέντρο Βασιλίτσας και η συλλογή μανιταριών από μία πραγματικά μεγάλη ποικιλία. Τα Γρεβενά τείνουν να είναι ένας από τους πιο αγαπημένους ορεινούς προορισμούς στην Ελλάδα. Και όχι μόνο κατά τους χειμωνιάτικους μήνες.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+           </ion-card-content>
+        </ion-card>
+      </ion-slide> 
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header>
+            <ion-card-title>Παλαιός Άγιος Αθανάσιος</ion-card-title>
+            <ion-card-subtitle>Ένα χωριό-διαμάντι που πρέπει να ανακαλύψετε</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="https://i0.wp.com/travelvibe.eu/wp-content/uploads/2019/11/%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1-101-%CF%86%CF%89%CF%84%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B5%CF%82-%CE%B1%CF%80%CF%8C-drone-%CF%80%CE%BF%CF%85-%CE%B8%CE%B1-%CF%83%CE%B5-%CE%B5%CE%BD%CF%84%CF%85%CF%80%CF%89%CF%83%CE%B9%CE%AC%CF%83%CE%BF%CF%85%CE%BD.6.jpg?w=870&ssl=1" alt="">
+            <br>
+            Με αλπική… οµορφιά και γραφικότητα που εκπλήσσει ευχάριστα, ο παραδοσιακός οικισµός του Αγ. Αθανασίου,
+            ένα βήµα από την Έδεσσα και το Καϊμάκτσαλαν,
+            δεν κατέχει τυχαία µια θέση στην κορυφή ανάμεσα στους top χειµερινούς προορισµούς
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Αριδαία</ion-card-title>
+            <ion-card-subtitle>Το Ιαματικό Χωριό του βορρά</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src='https://lidrahotel.gr/images/gallery/loutra_pozar.jpg'  alt="">
+            <br>
+            'Η Αριδαία είναι κωμόπολη της Ελλάδας, που ανήκει στον νομό Πέλλας. Βρίσκεται 25 χλμ. βόρεια της Έδεσσας στη δυτική όχθη του Αλμωπαίου ποταμού Μογλενίτσα και στην βόρεια της Μπέλιτσας. Έχει πληθυσμό 6.900 κατοίκους.Είναι έδρα του Δήμου Αλμωπίας και κάποτε έδρα της πρώην επαρχίας Αλμωπίας και του πρώην Δήμου Αριδαίας.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="HotelCards">
+          <ion-card-header >
+            <ion-card-title>Φλώρινα</ion-card-title>
+            <ion-card-subtitle>Η πόλη των "Μπουνταλάδων"</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="https://www.iefimerida.gr/sites/default/files/inline-images/florina-potami-arxontiko.jpg"  alt="">
+            <br>
+            Ένα υπέροχο φυσικό τοπίο που διατρέχεται από έξι πανέμορφες λίμνες (Βεγορίτιδα, λίμνη των Πετρών, Ζάζαρη, Χειμαδίτιδα, Μικρή και Μεγάλη Πρέσπα), παραλίμνια χωριά με εικόνες και μνημεία που χάνονται στα βάθη του χρόνου, πέτρινοι διατηρητέοι οικισμοί και μια πρωτεύουσα που επίσης χαρακτηρίζεται έντονα από το υγρό στοιχείο συνθέτουν το «αγγελοπουλικό» τοπίο της περιοχής της Φλώρινας, της περιοχής που ενέπνευσε τον αξέχαστο σκηνοθέτη να υμνήσει την ομορφιά και την ζωή…
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="HotelCards" >
+          <ion-card-header>
+            <ion-card-title>Κοζάνη</ion-card-title>
+            <ion-card-subtitle>Η Πόλη των Μωμόγερων..</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img src='data:image/jpeg;base64,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'  alt="">
+            <br>
+            Η Κοζάνη είναι πόλη της Μακεδονίας, έδρα του δήμου Κοζάνης και πρωτεύουσα της Περιφερειακής Ενότητας Κοζάνης στη δυτική Μακεδονία. Επίσης, αποτελεί την έδρα της Περιφέρειας Δυτικής Μακεδονίας. Είναι χτισμένη ανάμεσα στις οροσειρές του Βερμίου, του Μπούρινου και των Πιερίων, 15 χλμ βορειοδυτικά της λίμνης του Πολυφύτου, σε υψόμετρο 720 μέτρων από την επιφάνεια της θάλασσας. Απέχει 120 χλμ από τη Θεσσαλονίκη και 470 χλμ από την Αθήνα. Έχει πληθυσμό 41.066 κατοίκους.
+            <br>
+            <ion-button color="light" expand="block" routerLink='/hotels'>Περισσότερα..</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>  
+<ion-list  class="listBackground">
+  <h3> Ενοικίασε το αμάξι της επιλογής σου γρήγορα και έυκολα </h3>
+</ion-list>
+
+<ion-slides >
+  <ion-slide>
+    <ion-card  class="carCard">
+      <ion-card-header>
+        <ion-card-title>Nissan-Micra</ion-card-title>  
+        <ion-card-subtitle>Ενοικίασε το νέο Nissan-Micra μόνο 25€ την Ημέρα</ion-card-subtitle>           
+      </ion-card-header>
+      <ion-card-content >
+        <img src="https://s8096.pcdn.co/wp-content/uploads/2018/08/2018-nissan-micra-overview.jpg
+        " alt="Nissan-Micra">
+        <br>
+        <p><ion-icon name="location" slot="start"></ion-icon>Θεσσαλονίκη,Εθνικής Αντίστασης,8355134.</p>
+        <br>
+        <p style="text-align: left;"><ion-icon name="pricetag" slot="start"></ion-icon>25€ / Ημέρα.</p>
+        <br>
+        <li>
+          <p style="text-align: left;">Ιστοσελίδα: <a href="https://alphadrive.gr/"> AlphaDrive</a></p>
+       </li>
+        <br>
+        <ion-button type="ion-button"color="light" expand="block"  routerLink='/cars'>Περισσότερα..</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="carCard">
+      <ion-card-header>
+        <ion-card-title>Hyundai i20</ion-card-title>
+        <ion-card-subtitle>Οι καλύτερες Τιμες σε ενοικιαζόμενα.Hyundai i20 με 30€ την Μέρα.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/2018_Hyundai_i20_facelift_Front.jpg" alt="">
+        <br>
+        <p style="text-align: left;"><ion-icon name="location" slot="start"></ion-icon> Βερμίου 21 ΤΚ. 50 100 Κοζάνη </p>
+        <br>
+        <p style="text-align: left;"><ion-icon name="pricetag" slot="start"></ion-icon>30€ / Ημέρα.</p>
+        <br>
+        <li>
+          <p style="text-align: left;">Ιστοσελίδα: <a href="https://www.ioannidisae.gr/">Ioannidisae</a></p>
+       </li>
+        <br>
+        <ion-button type="ion-button"color="light" expand="block"  routerLink='/cars'>Περισσότερα..</ion-button>
+        <br>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="carCard">
+      <ion-card-header>
+        <ion-card-title>Fiat panda</ion-card-title>
+        <ion-card-subtitle>Το ολοκαίνουργιο Fiat panda μονο με 20€ την μέρα </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="https://gaviotis.gr/wp-content/uploads/2014/09/fiat-panda-auto-85ph-syros-rent-a-car1.jpg
+        " alt="">
+        <br>
+        <p style="text-align: left;"><ion-icon name="location" slot="start"></ion-icon> Δημάρχου Αναστάσιος Σούλας 14, 53100,Φλώρινα, Ελλάδα</p>
+        <br>
+        <p style="text-align: left;"><ion-icon name="pricetag" slot="start"></ion-icon>20€ / Ημέρα.</p>
+        <br>
+        <li>
+          <p style="text-align: left;">Ιστοσελίδα: <a href="https://florinarentacar.com/">abc Rent a car</a></p>
+       </li>
+        <br>
+        <ion-button type="ion-button"color="light" expand="block"  routerLink='/cars'>Περισσότερα..</ion-button>
+        <br>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-card class="carCard">
+      <ion-card-header>
+        <ion-card-title>Ford Focus</ion-card-title>
+        <ion-card-subtitle>Ford focus 2020 μονο με 35€ ημερησίως </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src=" https://www.drive.gr/sites/default/files/node-files/photos/gallery/2014/10/ford_focus_5d_3.jpg
+        " alt="">
+        <br>
+        <p style="text-align: left;"><ion-icon name="location" slot="start"></ion-icon> 
+          Καραμανλή Κωνσταντίνου 29, Παπάφειο (Θεσσαλονίκη), 546 39 Θεσσαλονίκη Θεσσαλονίκης</p>
+        <br>
+        <p style="text-align: left;"><ion-icon name="pricetag" slot="start"></ion-icon>35€ / Ημέρα.</p>
+        <br>
+        <li>
+          <p style="text-align: left;">Ιστοσελίδα: <a href="https://www.a-rent.gr/">a-rent.gr</a></p>
+       </li>
+        <br>
+
+        <ion-button type="ion-button"color="light" expand="block"  routerLink='/cars'>Περισσότερα..</ion-button>
+        <br>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+
+<ion-list  class="listBackground">
+  <h3> Πραγματοποίησε όποια δραστηριότητα σου ταιριάζει !!! </h3>
+</ion-list>
+<ion-slides>
+  <ion-slide>
+    <ion-card class="activitiesCard">
+      <ion-card-header>
+        <ion-card-title>Σκι στο Καϊμακτσαλαν</ion-card-title>  
+        <ion-card-subtitle>Ζησε την εμπειρια στα 2500 μετρα</ion-card-subtitle>           
+      </ion-card-header>
+      <ion-card-content >
+        <img src="https://kaimaktsalan.gr/wp-content/uploads/2016/03/1655494_514060232046232_1358819270_o.jpg" alt="">
+        <br>
+        Το χιονοδρομικό μας βρίσκεται στα όρια του νομού Πέλλας που αποτελεί σύνορο με τα Σκόπια.
+        Το όρος Βόρας ή Καϊμακατσαλάν είναι το τρίτο μεγαλύτερο σε ύψος της Ελλάδας με υψόμετρο 2524 μ. Στην κορυφή του,
+        και επί της γραμμής των συνόρων, υπάρχει το εκκλησάκι του Προφήτη Ηλία που αποτελεί μνημείο του 1ου Παγκοσμίου πολέμου.
+        <br>
+        <ion-button color="light" expand="block" routerLink='/activities'>Περισσότερα..</ion-button>
+        <br>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="activitiesCard">
+      <ion-card-header>
+        <ion-card-title>Λουτρά Πόζαρ-Αριδαία</ion-card-title>
+        <ion-card-subtitle>Καταρράκτης, φυσικές πισίνες «κάτω από την φωτιά»</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="https://cdn.e-daily.gr/repository/2018/DJI_0014.jpg" alt="">
+        <br>
+        Στο Λουτράκι του νομού Πέλλας και 13 χλμ. δυτικά της Αριδαίας,
+        υπάρχουν oι μεταλλικές πηγές Λουτρά Λουτρακίου ή Λουτρά Πόζαρ με το νερό τους να έχει πολλές θεραπευτικές ιδιότητες συμπεριλαμβανομένου και μακροχρόνιων παθήσεων και είναι πόσιμo.
+        Είναι κατάλληλο για λουτροθεραπεία και ποσιοθεραπεία ή για τόνωση και χαλάρωση.
+        <br>
+        <ion-button color="light" expand="block" routerLink='/activities'>Περισσότερα..</ion-button>
+        <br>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="activitiesCard">
+      <ion-card-header>
+        <ion-card-title>Καράβι Κλειώ</ion-card-title>
+        <ion-card-subtitle> Θεσσαλονίκη</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="https://media-cdn.tripadvisor.com/media/photo-w/1b/a3/a2/3e/sailing-departures-every.jpg" alt="">
+        <br>
+       <p>Το πλωτό μπαρ της Θεσσαλονίκης. Αποτελεί ιδανικό προορισμό για όσους θέλουν ένα στέκι, καθόλου στάσιμο, με θέα στον ορίζοντα. Μπορείτε να απολαύσετε από το bar το κοκτέιλ της επιλογής σας, οι ρυθμοί που θα συνοδεύουν την επιλογή του ποτού σας είναι ethnic με εξωτικό χαρακτήρα.</p>
+       <ion-button color="light" expand="block" routerLink='/activities'>Περισσότερα..</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-card class="activitiesCard">
+      <ion-card-header>
+        <ion-card-title>Αρκτούρος</ion-card-title>
+        <ion-card-subtitle>Φλώρινα</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <img src='https://www.arcturos.gr/CustomImageHandler.ashx?m=fit&f=ZmlsZXMvMS92ZXNuYV84Xy5KUEc%3d&w=1536&h=864' alt="">
+        <br>
+        Ο ΑΡΚΤΟΥΡΟΣ είναι μία αστική, μη κυβερνητική και μη κερδοσκοπική, περιβαλλοντική οργάνωση που ιδρύθηκε το 1992 κι έχει ως στόχο την προστασία της άγριας πανίδας και του φυσικού περιβάλλοντος στην Ελλάδα και το εξωτερικό.Αφορμή της ίδρυσής του ήταν η ανάγκη εύρεσης άμεσης λύσης στο τότε διαρκώς αυξανόμενο πρόβλημα της αιχμαλωσίας αρκούδων αλλά και λύκων. Μια αφορμή που οδήγησε σε ένα ολοκληρωμένο πλαίσιο δράσεων και ενεργειών.
+        <br>
+        <ion-button color="light" expand="block" routerLink='/activities'>Περισσότερα..</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+
+
+</div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" color="primary">
+      <ion-icon name="Home" color="primary"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>
+
+

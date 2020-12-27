@@ -1,0 +1,91 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="data">
+    <ion-card-header>
+      <img src="{{data.image}}" alt="">
+      <ion-card-title>
+        {{data.office_name}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{data.City}},{{data.address}}
+      </ion-card-subtitle>
+    </ion-card-header>
+   <button></button> <a href="{{data.site}}">Επίσκεψη</a>
+
+  </ion-card>
+
+  <div class="CarsBackground">
+    <form #form="ngForm" (ngSubmit)="getValues(form)">
+   <ion-card>
+      <ion-item>
+        <ion-label>Όχημα </ion-label>
+        <ion-icon name="bicycle" slot="start"></ion-icon>
+        <ion-select name="oxhma"  okText="Ok" cancelText="Cancel"  ngModel required>
+          <ion-select-option *ngFor="let user of CarCategories" >{{user.category}}</ion-select-option>
+        </ion-select >
+      </ion-item>
+    </ion-card>
+  </form>
+  </div>
+  <div class='AllVehicles'>
+    <ion-card *ngFor="let user of AllVehicle" >
+      <div *ngIf="form.value.oxhma==user.category">
+      <img src='{{user.image}}'/>
+      <ion-card-header >
+        <ion-card-title> {{ user.marka}}</ion-card-title>
+        <ion-card-subtitle value="city-address">Τυπος Οχηματος:{{user.category}} </ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content value="comments">
+        <p>
+          Price:{{user.price}}€ Per day
+        </p>
+       
+      </ion-card-content>
+      </div>
+      </ion-card>
+  </div>
+ 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" color="primary">
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car" color="primary"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

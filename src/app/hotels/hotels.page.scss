@@ -1,0 +1,61 @@
+ion-header{
+  background-color:lightskyblue
+}
+  .title{
+    color:darkslategray;
+  }
+  .masters{
+    margin:0px;
+    padding:1px;
+    background-color: darkgray;
+  }
+  .imgLogo{
+    width:100px;
+    margin:auto;
+  }
+  .my-custom-interface .brown-option {
+    --color: #5e3e2c;
+    --color-hover: #362419;
+  }
+  ion-select {
+    width: 100%;
+  
+    justify-content: center;
+  }
+  ion-select::part(placeholder)::first-letter {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .hotelsBackground{
+    padding: 5px;
+    margin: auto;
+    width:100%;
+    height:auto;
+    background-color: lightgray;
+  }
+  .HotelCards{
+    padding:1px;
+    position: relative;
+    top:auto;
+    margin-top: auto;
+    background-color: lightgray;
+    box-shadow: 1px 2px 15px #cccccc;
+    padding-top: auto;
+  }
+.Background{
+  
+  padding-top: auto;
+  background-color: lightgray;
+  background-size: cover;
+}
+  
+  .map{
+    position: relative;
+    left:40%;
+    top:15%;
+    font-size: 100px;
+    color:black;
+    opacity:80%;
+   }
+ 
+

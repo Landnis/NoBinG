@@ -1,0 +1,72 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        
+        <ion-icon name="heart" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contactFormBackground">
+  <form #form="ngForm" (ngSubmit)="getValues(form)">
+    <div class="contactForm">
+    <ion-list>
+      <h1 style="text-align: center;">Contact</h1>
+      <h1 style="text-align: center;">Γράψτε μας τις Εντυπώσεις Σας..</h1>
+    <ion-item>
+      <ion-label position="floating">'Ονομα</ion-label>
+      <ion-input name="name" type="name" ngModel required ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Επίθετο</ion-label>
+      <ion-input name="surname" type="surname" ngModel required ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input name="email" type="email" ngModel required ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Σχόλια</ion-label>
+      <ion-textarea name="comment" placeholder="Write your Comment.." rows="5" cols="20" ngModel required></ion-textarea>
+    </ion-item>
+  </ion-list>
+    <ion-button type="submit" expand="block" >Submit</ion-button>
+  </div>
+  </form>
+</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" color="primary">
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

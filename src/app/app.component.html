@@ -1,3 +1,78 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
+<ion-app> 
+  
+  <ion-menu menuId="main-menu" content-id="main" >
+    
+    <ion-header>
+      <ion-toolbar>
+        <img src="https://www.logolynx.com/images/logolynx/83/83926e17372ac03d71e799e3d1812f73.png">
+        <h1 style="text-align: center;">Welcome </h1>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content >
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="cars">
+            <ion-icon name="car" slot="start"></ion-icon>
+            <ion-label>Rent a Car</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item routerLink="hotels">
+          <ion-icon name="bed" slot="start"></ion-icon>
+          <ion-label>Hotel</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="restaurants">
+            <ion-icon name="restaurant" slot="start"></ion-icon>
+            <ion-label>Restaurant</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="museums">
+ 
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Museums</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="activities">
+            <ion-icon name="american-football" slot="start"></ion-icon>
+            <ion-label>Activities</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="contact-form">
+ 
+            <ion-icon name="chatbubbles" slot="start"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="about">
+            <ion-icon name="happy-sharp" slot="start"></ion-icon>
+             <ion-label>About</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+
+        <ion-menu-toggle>
+          <ion-item routerLink="login" >
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    
+  </ion-menu>
+
+  <ion-router-outlet id="main" ></ion-router-outlet> 
+  
 </ion-app>
