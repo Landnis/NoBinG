@@ -1,0 +1,32 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/activities-results']" color="dark"> Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="Background">
+    <form #form="ngForm" (ngSubmit)="ReservedActivities(form)">
+  <ion-card *ngIf="data2">
+    <div class="CardBackground">
+    <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+   <h3 style="text-align: center;">Στοιχεία Χρήστη</h3>
+   <p>Όνομα: {{users.firstname}}</p>
+   <p>Επώνυμο:{{users.surname}}</p>
+   <p>Email : {{users.mail}}</p>
+   <h3 style="text-align: center;">Στοιχεία Δραστηριότητας</h3>
+    <p>Όνομα Δραστηριότητας: {{data2.activity_name}}</p>
+    <p>Email Δραστηριότητας: {{data2.city}}</p>
+    <p>Τηλέφωνο: {{data2.phone}}</p>
+    <p> Ημερομηνία: {{newDate}}</p>
+    <ion-button type="submit" expand="block" (click)="getValues()" color="dark" >Κράτηση</ion-button>
+  </div>
+  </ion-card>
+  </form>
+</div>
+</ion-content>

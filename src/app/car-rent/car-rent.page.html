@@ -1,38 +1,49 @@
-<ion-header [translucent]="true" >
+<ion-header [translucent]="true"  class="HeaderBackground">
   <ion-toolbar>
     <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
 
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+   
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="data">
+<div class="background">
+  <ion-card *ngIf="data" class="cardBackground">
     <ion-card-header>
-      <img src="{{data.image}}" alt="">
-      <ion-card-title>
-        {{data.office_name}}
-      </ion-card-title>
-      <ion-card-subtitle>
-        {{data.City}},{{data.address}}
-      </ion-card-subtitle>
+      <img src='{{data.image}}'/>
+      <ion-card-title value="name" style="text-align: center;">{{data.office_name}}</ion-card-title>
+   
+      <p style="text-align: left;"> <ion-icon name="navigate" class="map"></ion-icon> {{data.City}}</p>
+      <p style="text-align: left;"> <ion-icon name="location" class="map"></ion-icon> {{data.address}}</p>
+      <p style="text-align: left;">    <ion-icon name="mail" class="map"></ion-icon> {{data.email}}</p>
+      <p style="text-align: left;"> <ion-icon name="call" class="map"></ion-icon> {{data.phone}}</p>
+      <p style="text-align: left;"><ion-icon name="logo-web-component" class="map"></ion-icon> Website: <a href="{{data.site}}">{{data.office_name}}</a></p>
     </ion-card-header>
-   <button></button> <a href="{{data.site}}">Επίσκεψη</a>
 
   </ion-card>
 
-  <div class="CarsBackground">
-    <form #form="ngForm" (ngSubmit)="getValues(form)">
-   <ion-card>
+    <form #form="ngForm" >
+   <ion-card class="cardBackground">
+    <ion-item>
+      <ion-label>Check-In</ion-label>
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      <ion-datetime  min="2021" max="2023"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DDD. MMM DD, YYYY"
+      monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="checkIn" placeholder="Check-In" ngModel required></ion-datetime>
+    </ion-item> 
+    <ion-item>
+    <ion-label>Check-Out</ion-label>
+    <ion-icon name="calendar" slot="start"></ion-icon>
+    <ion-datetime  min="2021-01" max="2023"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DDD. MMM DD, YYYY"
+      monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="checkOut" placeholder="Check-Out" ngModel required></ion-datetime>
+    </ion-item>
       <ion-item>
         <ion-label>Όχημα </ion-label>
         <ion-icon name="bicycle" slot="start"></ion-icon>
@@ -42,27 +53,28 @@
       </ion-item>
     </ion-card>
   </form>
-  </div>
+  
+
+
   <div class='AllVehicles'>
-    <ion-card *ngFor="let user of AllVehicle" >
+     
+    <ion-card *ngFor="let user of AllVehicle"  class="cardBackground" >
       <div *ngIf="form.value.oxhma==user.category">
       <img src='{{user.image}}'/>
       <ion-card-header >
-        <ion-card-title> {{ user.marka}}</ion-card-title>
-        <ion-card-subtitle value="city-address">Τυπος Οχηματος:{{user.category}} </ion-card-subtitle>
+        <ion-card-title name="marka" > {{ user.marka}}</ion-card-title>
       </ion-card-header>
-    
-      <ion-card-content value="comments">
-        <p>
-          Price:{{user.price}}€ Per day
-        </p>
-       
-      </ion-card-content>
+      
+      <p style="text-align: left;" name="type"><ion-icon name="car" class="map"></ion-icon> Τύπος Οχήματος: {{user.category}}</p>       
+      <p style="text-align: left;" name="price"> <ion-icon name="pricetags" class="map"></ion-icon> Τιμή ανά Ημέρα: {{user.price}} €</p>       
+      <ion-button (click)="openDetailsWithQueryParams(data,form,user)" expand="block" color="dark" >Επίλεξε</ion-button>
+
       </div>
       </ion-card>
+      
   </div>
  
-
+</div>
 </ion-content>
 
 <ion-footer>

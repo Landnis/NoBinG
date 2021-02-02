@@ -6,12 +6,6 @@
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 
 </ion-header>
@@ -19,7 +13,7 @@
 <ion-content >
   <div class="museumBackground">
   <form #form="ngForm" (ngSubmit)="getValues(form)">
-    <ion-card style="background-color: lightyellow;">
+    <ion-card style="background-color: lightsteelblue;" class="SearchCard">
       <h1 style="text-align: center;">Musuems</h1>
      <h1 style="text-align: center;">Επισκέψου τα Σημαντικότερα Μουσεία της Β.Ελλάδας</h1>
       <ion-item>
@@ -45,11 +39,11 @@
         <div *ngIf="form.value.Location==user.city">
           <img src="{{user.image}}" alt="">
           <h1 style="text-align: center;">{{user.museum_name}}</h1>
-          <p style="text-align: left;"> <ion-icon name="pricetag"></ion-icon>Τιμή:{{user.price}}</p>
-          <p style="text-align: left;"> <ion-icon name="location"></ion-icon> Διεύθυνση: {{user.address}}</p>
-          <p style="text-align: left;"> <ion-icon name="star-half"></ion-icon>  Πόλη: {{user.city}}</p>
-          <p style="text-align: left;"> Ιστοσελίδα: <a href="{{user.site}}"> {{user.museum_name}}</a></p>
-          <p style="text-align: left;"> <ion-icon name="call"></ion-icon> {{user.phone}}</p>
+          <p style="text-align: left;"> <ion-icon name="pricetag" class="map1"></ion-icon> Τιμή:{{user.price}} €</p>
+          <p style="text-align: left;"> <ion-icon name="location" class="map1"></ion-icon> Διεύθυνση: {{user.address}}</p>
+          <p style="text-align: left;"> <ion-icon name="pin" class="map1"></ion-icon>  Πόλη: {{user.city}}</p>
+          <p style="text-align: left;"> <ion-icon name="map" class="map1"></ion-icon>  Ιστοσελίδα: <a href="{{user.site}}"> {{user.museum_name}}</a></p>
+          <p style="text-align: left;"> <ion-icon name="call" class="map1"></ion-icon> {{user.phone}}</p>
 
           <ion-button type="submit" expand="block"color="light" (click)="openDetailsWithQueryParams(user)" >Περισσότερα</ion-button>
         

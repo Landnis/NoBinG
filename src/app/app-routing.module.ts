@@ -79,6 +79,38 @@ const routes: Routes = [
     path: 'museum-results',
     loadChildren: () => import('./museum-results/museum-results.module').then( m => m.MuseumResultsPageModule)
   },
+  {
+    path: 'restaurant-results',
+    loadChildren: () => import('./restaurant-results/restaurant-results.module').then( m => m.RestaurantResultsPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+  },
+  {
+    path: 'reserved-activity',
+    loadChildren: () => import('./reserved-activity/reserved-activity.module').then( m => m.ReservedActivityPageModule)
+  },
+  {
+    path: 'restaurant-reserved',
+    loadChildren: () => import('./restaurant-reserved/restaurant-reserved.module').then( m => m.RestaurantReservedPageModule)
+  },
+  {
+    path: 'museum-reserved',
+    loadChildren: () => import('./museum-reserved/museum-reserved.module').then( m => m.MuseumReservedPageModule)
+  },
+  {
+    path: 'hotel-reserved',
+    loadChildren: () => import('./hotel-reserved/hotel-reserved.module').then( m => m.HotelReservedPageModule)
+  },
+  {
+    path: 'rentacar-reserved',
+    loadChildren: () => import('./rentacar-reserved/rentacar-reserved.module').then( m => m.RentacarReservedPageModule)
+  },
   
 ];
 

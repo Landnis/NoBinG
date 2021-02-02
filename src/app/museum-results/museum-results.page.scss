@@ -6,3 +6,33 @@ ion-header{
       width:100px;
       margin:auto;
     }
+.CardResultBackground{
+  width:100%;
+  position: relative;
+  height:auto;
+  padding-top: 3%;
+  margin-top: auto;
+  margin: auto;
+  background-color: lightcoral;
+}
+.map1{
+  position: relative;
+  font-size: 25px;
+  color:black;
+  opacity:80%;
+ }
+ .card{
+  background-color:lightsteelblue;
+  position: relative;
+  padding: 0%;
+  margin-top: 10%;
+ }
+ ion-calendar{
+  position: relative;
+   width:100%;
+   top:20%;
+  opacity:80%;
+ }
+ .HeaderBackground{
+  background-color: lightskyblue;
+}

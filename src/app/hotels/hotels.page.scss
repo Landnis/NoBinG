@@ -4,11 +4,6 @@ ion-header{
   .title{
     color:darkslategray;
   }
-  .masters{
-    margin:0px;
-    padding:1px;
-    background-color: darkgray;
-  }
   .imgLogo{
     width:100px;
     margin:auto;
@@ -27,6 +22,7 @@ ion-header{
     font-weight: 500;
   }
   .hotelsBackground{
+    position:relative;
     padding: 5px;
     margin: auto;
     width:100%;
@@ -47,6 +43,7 @@ ion-header{
   padding-top: auto;
   background-color: lightgray;
   background-size: cover;
+
 }
   
   .map{
@@ -57,5 +54,15 @@ ion-header{
     color:black;
     opacity:80%;
    }
- 
+   .map1{
+    position: relative;
+    font-size: 25px;
+    color:black;
+    opacity:80%;
+   }
+.SearchCard{
+  background-color: lightsteelblue;
+  position: relative;
+  margin-top: 100px;
+ }
 

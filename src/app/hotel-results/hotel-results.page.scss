@@ -1,6 +1,5 @@
 ion-header{
-    width:100%;
-    background-color:lightskyblue
+    background-color:lightskyblue;
   }
     .imgLogo{
       width:100px;
@@ -9,8 +8,25 @@ ion-header{
 .CardBackground{
     position: relative;
     width:100%;
-    height: 100%;
+    
     background-color:darkgrey;
     padding-top:2%;
     margin-top: auto;
+}
+.FormDetails{
+  position: relative;
+  width:100%;
+  
+  background-color:darkgrey;
+  padding-top:2%;
+  margin-top: auto;
+}
+.map1{
+  position: relative;
+  font-size: 25px;
+  color:black;
+  opacity:80%;
+ }
+ .HeaderBackground{
+  background-color: lightskyblue;
 }

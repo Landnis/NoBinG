@@ -43,7 +43,7 @@ ngOnInit(){
 }
 async getValues(form):Promise<void>{
   console.log("Topothesia: "+form.value.Location) 
-  this.router.navigateByUrl('hotels-search');
+  this.router.navigateByUrl('/car-rent');
 }
 openDetailsWithQueryParams(user){
   console.log(user)

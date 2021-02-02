@@ -1,0 +1,550 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login']" color="dark">Log Out</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding> 
+  
+  <div class="background">
+    <h1 style="text-align: center;" >Welcome Admin </h1>
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <form #form="ngForm" (ngSubmit)="postHotels(form)">
+            <h2 style="text-align: center;">Εισαγωγή Ξενοδοχείων</h2>
+            <ion-item>
+              <ion-label position="floating">Όνομα Ξενοδοχείου</ion-label>
+              <ion-input name="Hotel_name" type="text"  minlength="4" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Πόλη</ion-label>
+              <ion-input name="City" type="text"  minlength="2" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Διέυθυνση</ion-label>
+              <ion-input name="Address" type="text"  minlength="6" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τηλέφωνο</ion-label>
+              <ion-input name="Phone" type="text"  minlength="10" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Αστέρων</ion-label>
+              <ion-input name="evaluation_stars" type="number" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="Hotels_image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Site Url</ion-label>
+              <ion-input name="site" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input name="email" type="email" pattern=".+@gmail.com"  ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Σχόλια</ion-label>
+              <ion-textarea name="comments" rows="5" cols="20" ngModel required></ion-textarea>
+            </ion-item>
+            <ion-button type="submit" expand="block" color="dark" [disabled]="form.invalid"> Εισαγωγή</ion-button>
+          </form>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Hotels Informations</h1>
+          
+            <ion-list *ngFor="let cities of NumberOfCities">
+              <h3 style="text-align: left;" >Number Of Cities: {{cities.CitiesCount}}</h3>
+            </ion-list>
+          <ion-list *ngFor="let cities of NumberOfCities">
+            <h3 style="text-align: left;" >Number Of Hotels: {{cities.NumberOfHotels}}</h3><br>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Hotels Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">City</ion-label>
+                  <ion-label style="text-align: right;">Number Of Hotels</ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let cities of  GroupOfHotels">
+                  <h2 style="text-align:left;">{{cities.City}} : {{cities.NumberOfHotels}}</h2>
+                </ion-list>
+
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <form #form2="ngForm" (ngSubmit)="postOffice(form2)">
+            <h2 style="text-align: center;">Εισαγωγή Γραφείων Ενοικιασεων Οχημάτων</h2>
+            <ion-item>
+              <ion-label position="floating">Όνομα Γραφείου</ion-label>
+              <ion-input name="office_name" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Πόλη</ion-label>
+              <ion-input name="City" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Διέυθυνση</ion-label>
+              <ion-input name="address" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τηλέφωνο</ion-label>
+              <ion-input name="phone" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Site Url</ion-label>
+              <ion-input name="site" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input name="email" type="email" ngModel required></ion-input>
+            </ion-item>
+            <ion-button type="submit" expand="block" color="dark" (click)="getValues(form2)" [disabled]="form2.invalid">Εισαγωγή</ion-button>
+          </form>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Rent Offices Informations</h1>
+          <ion-list *ngFor="let cities of offices">
+            <h3 style="text-align: left;">Number Of Cities: {{cities.CitiesCount}}</h3>
+          </ion-list>
+        <ion-list *ngFor="let cities of offices">
+          <h3 style="text-align: left;">Number Of Offices: {{cities.NumberOfOffices}}</h3><br>
+        </ion-list>
+        </ion-card>
+      </ion-slide>
+       
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Rent Offices Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">City</ion-label>
+                  <ion-label style="text-align: right;">Number Of Offices</ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let cities of GroupOfOffices">
+                  <h2 style="text-align:left;">{{cities.City}} : {{cities.NumberOfOffices}}</h2>
+                </ion-list>
+
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <form #form3="ngForm" (ngSubmit)="postActivities(form3)">
+            <h2 style="text-align: center;">Εισαγωγή Δραστηριοτήτων</h2>
+            <ion-item>
+              <ion-label position="floating">Όνομα Δραστηριότητας</ion-label>
+              <ion-input name="activity_name" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Πόλη</ion-label>
+              <ion-input name="city" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Διέυθυνση</ion-label>
+              <ion-input name="address" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τηλέφωνο</ion-label>
+              <ion-input name="phone" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Site Url</ion-label>
+              <ion-input name="site" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input name="email" type="email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Σχόλια</ion-label>
+              <ion-textarea name="comments" rows="5" cols="20" ngModel required></ion-textarea>
+            </ion-item>
+            <ion-button type="submit" expand="block" color="dark" (click)="getValues(form3)" [disabled]="form3.invalid">  Εισαγωγή</ion-button>
+
+          </form>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <h1>Activities Informations</h1>
+          <ion-list *ngFor="let cities of NumberOfActivities">
+            <h3 style="text-align: left;">Number Of Cities: {{cities.CitiesCount}} </h3><br>
+            <h3 style="text-align: left;">Number of Activities: {{cities.NumberOfActivities}}</h3><br>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Activities Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">City</ion-label>
+                  <ion-label style="text-align: right;">Number Of Activities</ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let cities of GroupOfActivities">
+                  <h2 style="text-align: left;">{{cities.city}} : {{cities.NumberOfActivities}}</h2>
+                </ion-list>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <form #form4="ngForm" (ngSubmit)="postMuseums(form4)">
+            <h2 style="text-align: center;">Εισαγωγή Μουσείων</h2>
+            <ion-item>
+              <ion-label position="floating">Όνομα Μουσείου</ion-label>
+              <ion-input name="museum_name" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Πόλη</ion-label>
+              <ion-input name="city" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Διέυθυνση</ion-label>
+              <ion-input name="address" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τηλέφωνο</ion-label>
+              <ion-input name="phone" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Site Url</ion-label>
+              <ion-input name="site" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input name="email" type="email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Price</ion-label>
+              <ion-input name="price" type="number" ngModel required></ion-input>
+            </ion-item>
+            <ion-button  type="submit" expand="block" color="dark" [disabled]="form4.invalid">Εισαγωγή</ion-button>
+          </form>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <h1>Museums Informations</h1>
+          <ion-list *ngFor="let cities of museums">
+            <h3 style="text-align: left;">Number Of Museums: {{cities.CitiesCount}}</h3><br>
+            <h3 style="text-align: left;">Number of Museums: {{cities.NumberOfMuseums}}</h3><br>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Museums Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">City</ion-label>
+                  <ion-label style="text-align: right;">Number Of Museums</ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let cities of GroupOfMuseums">
+                  <h2 style="text-align: left;">{{cities.city}} : {{cities.NumberOfMuseums}}</h2>
+                </ion-list>
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <form #form5="ngForm" (ngSubmit)="postRestaurants(form5)">
+            <h2 style="text-align: center;">Εισαγωγή Εστιατορίων</h2>
+            <ion-item>
+              <ion-label position="floating">Όνομα Εστιατορίου</ion-label>
+              <ion-input name="restaurant_name" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Πόλη</ion-label>
+              <ion-input name="city" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Διέυθυνση</ion-label>
+              <ion-input name="address" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τηλέφωνο</ion-label>
+              <ion-input name="phone" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Site Url</ion-label>
+              <ion-input name="site" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-button  type="submit" expand="block" color="dark" [disabled]="form5.invalid">Εισαγωγή</ion-button>
+          </form>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <h1>Restaurants Informations</h1>
+          <ion-list *ngFor="let cities of restaurants">
+            <h3 style="text-align: left;">Number Of Cities: {{cities.CitiesCount}}</h3><br>
+            <h3 style="text-align: left;">Number of Restaurants: {{cities.NumberOfRestaurants}}</h3><br>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Restaurants Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">City</ion-label>
+                  <ion-label style="text-align: right;">Number Of Museums</ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let cities of GroupOfRestaurants">
+                  <h2 style="text-align: left;">{{cities.city}} : {{cities.NumberOfRestaurants}}</h2>
+                </ion-list>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <form #form6="ngForm" (ngSubmit)="postVehicle(form6)">
+            <h2 style="text-align: center;">Εισαγωγή Οχημάτων</h2>
+            <ion-item>
+              <ion-label position="floating">Αριθμός Κυκλοφορίας Οχήματος</ion-label>
+              <ion-input name="ArKykl" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Όνομα Οχήματος</ion-label>
+              <ion-input name="marka" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Κατηγορία Οχήματος(Μηχανή-Αυτοκίνητο)</ion-label>
+              <ion-input name="category" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">image Url</ion-label>
+              <ion-input name="image" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Τιμή ανα Ημέρα</ion-label>
+              <ion-input name="price" type="number" ngModel required></ion-input>
+            </ion-item>
+            <ion-button  type="submit" expand="block" color="dark" [disabled]="form6.invalid">Εισαγωγή</ion-button>
+          </form>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground">
+          <h1>Vehicle Informations</h1>
+          <ion-list *ngFor="let vehicle of GroupOfVehicles">
+            <h2 style="text-align: left;" *ngIf="vehicle.category=='Μηχανή'">Number of Bikes: {{vehicle.NumberOfVehicles}} </h2><br>
+            <h2 style="text-align: left;" *ngIf="vehicle.category=='Αυτοκίνητο'">Number of Cars: {{vehicle.NumberOfVehicles}} </h2><br>
+
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground" >
+          <h1>Vehicle Informations</h1>
+                <ion-list-header>
+                  <ion-label style="text-align: left;">Brand</ion-label>
+                  <ion-label style="text-align: right;">Category </ion-label>
+                </ion-list-header> 
+                <ion-list *ngFor="let vehicle of AllVehicles">
+                  <p style="text-align: left;">{{vehicle.marka}}: {{vehicle.category}}</p>
+                </ion-list>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+    <ion-slides>
+      
+
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Users Informations</h1>
+          <ion-list *ngFor="let users of AllUsers">
+            <p>User: {{users.firstname}} {{users.surname}}</p>
+            <p>Email: {{users.mail}}</p>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Users Informations</h1>
+          <ion-list *ngFor="let users of users">
+            <h3 style="text-align: center;" >Number Of Users: {{users.NumberOfUsers}}</h3>
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+     
+    </ion-slides>
+
+    <ion-slides>
+      
+
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Hotel Reservations</h1>
+          <ion-list *ngFor="let hotelsReserved of HotelReservation" style="background-color:lightgoldenrodyellow">
+            <div *ngFor="let users of AllUsers" >
+            <p *ngIf="users.id_users==hotelsReserved.userId">User:{{users.firstname}} {{users.surname}}</p>
+            </div>
+             
+            <div *ngFor="let hotels of AllHotels">
+            <p *ngIf="hotels.id_hotel==hotelsReserved.hotelId">Hotel: {{hotels.Hotel_name}}</p>
+            </div>
+            <div *ngFor="let rooms of AllRooms">
+            <p *ngIf="rooms.id_rooms==hotelsReserved.roomID">Room Category: {{rooms.Category}}</p>
+            </div>
+            <div *ngFor="let rooms of AllRooms">
+              <p *ngIf="rooms.id_rooms==hotelsReserved.roomID">Room Price Per Day: {{rooms.price}} ‎€</p>
+            </div>
+            <div *ngFor="let rooms of AllRooms">
+              <p *ngIf="rooms.id_rooms==hotelsReserved.roomID">Amount of Rooms: {{rooms.amount_rooms}}</p>
+            </div>
+            <div *ngFor="let rooms of AllRooms">
+              <p *ngIf="rooms.id_rooms==hotelsReserved.roomID">Room CheckIn: {{rooms.CheckIn}}</p>
+            </div>
+            <div *ngFor="let rooms of AllRooms">
+              <p *ngIf="rooms.id_rooms==hotelsReserved.roomID">Room CheckOut: {{rooms.CheckOut}}</p>
+            </div>
+           ---------------------------------------------------------------------------------------------------------------
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Vehicle Reservations</h1>
+          <ion-list *ngFor="let vehicleReserved of VehicleReservation" style="background-color:lightgoldenrodyellow">
+            <div *ngFor="let users of AllUsers" >
+            <p *ngIf="users.id_users==vehicleReserved.userId">User:{{users.firstname}} {{users.surname}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId"> Rent Office: {{offices.office_name}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">City: {{offices.City}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">Phone: {{offices.phone}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">Email: {{offices.email}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">Vehicle Type: {{vehicleReserved.vihecle_type}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">Check In: {{vehicleReserved.CheckIn}}</p>
+            </div>
+            <div *ngFor="let offices of AllOffices">
+              <p *ngIf="offices.id_office==vehicleReserved.officeId">Check Out: {{vehicleReserved.CheckOut}}</p>
+            </div>
+            
+           ---------------------------------------------------------------------------------------------------------------
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Restaurants Reservations</h1>
+          <ion-list *ngFor="let restaurantsReserved of RestaurantsReservation" style="background-color:lightgoldenrodyellow">
+            <div *ngFor="let users of AllUsers" >
+            <p *ngIf="users.id_users==restaurantsReserved.userId">User:{{users.firstname}} {{users.surname}}</p>
+            </div>
+            <div *ngFor="let restaurants of AdminRestaurants">
+              <p *ngIf="restaurants.restaurant_id==restaurantsReserved.restaurantId"> Restaurant: {{restaurants.restaurant_name}}</p>
+            </div>
+            <div *ngFor="let restaurants of AdminRestaurants">
+              <p *ngIf="restaurants.restaurant_id==restaurantsReserved.restaurantId">City: {{restaurants.city}}</p>
+            </div>
+            <div *ngFor="let restaurants of AdminRestaurants">
+              <p *ngIf="restaurants.restaurant_id==restaurantsReserved.restaurantId">Phone: {{restaurants.phone}}</p>
+            </div>
+            <div *ngFor="let restaurants of AdminRestaurants">
+              <p *ngIf="restaurants.restaurant_id==restaurantsReserved.restaurantId">Date: {{restaurantsReserved.Whitch_Day}}</p>
+            </div>
+            
+            
+           ---------------------------------------------------------------------------------------------------------------
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="formBackground1">
+          <h1>Museums Reservations</h1>
+          <ion-list *ngFor="let museumsReserved of MuseumsReservation" style="background-color:lightgoldenrodyellow">
+            <div *ngFor="let users of AllUsers" >
+            <p *ngIf="users.id_users==museumsReserved.userId">User:{{users.firstname}} {{users.surname}}</p>
+            </div>
+            <div *ngFor="let museums of AdminMuseums">
+              <p *ngIf="museums.museum_id==museumsReserved.museumId"> Museum: {{museums.museum_name}}</p>
+            </div>
+            <div *ngFor="let museums of AdminMuseums">
+              <p *ngIf="museums.museum_id==museumsReserved.museumId"> City: {{museums.city}}</p>
+            </div>
+            <div *ngFor="let museums of AdminMuseums">
+              <p *ngIf="museums.museum_id==museumsReserved.museumId">Price: {{museums.price}} ‎€</p>
+            </div>
+            <div *ngFor="let museums of AdminMuseums">
+              <p *ngIf="museums.museum_id==museumsReserved.museumId">Email: {{museums.email}}</p>
+            </div>
+            <div *ngFor="let museums of AdminMuseums">
+              <p *ngIf="museums.museum_id==museumsReserved.museumId">Date: {{museumsReserved.reservDay}}</p>
+            </div>
+            
+            
+           ---------------------------------------------------------------------------------------------------------------
+          </ion-list>
+        </ion-card>
+      </ion-slide>
+      
+    </ion-slides>
+
+  </div>
+
+</ion-content>

@@ -22,8 +22,8 @@ ion-select {
   height:100%;
 }
 .ActivitiesCards{
-  padding: 0px;
-  margin: auto;
+  padding-top: 0px;
+  margin-top:auto;
   width:100%;
   height:auto;
   background-color: lightsteelblue;
@@ -37,9 +37,13 @@ ion-select {
   color:black;
   opacity:80%;
  }
- .ActicitiesCards{
-   position: relative;
-   top:auto;
-   padding-top: auto;
-   margin-top: auto;
- }
+ 
+.card{
+  background-color: lightyellow;
+  position: relative;
+  margin-top:30%;
+}
+.cards{
+  background-color: lightyellow;
+
+}

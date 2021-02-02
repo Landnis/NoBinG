@@ -1,0 +1,47 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/login']" color="dark"> Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="RegisterBackground">
+    <form #form="ngForm" (ngSubmit)="getRegisterUSer(form)">
+      <div class="contactForm">
+        <h2 style="text-align: center;">Sign Up</h2>
+       <div class="imgForm">
+         <img src="https://www.logolynx.com/images/logolynx/5f/5ff10c911b6c2f5083a9c7fdad6cd163.png" alt="">
+       </div>
+      <ion-item>
+        <ion-label position="floating">'Ονομα</ion-label>
+        <ion-input name="firstname" type="name" minlength="3" ngModel required ></ion-input>
+        <ion-icon class="map" name="person-circle" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Επίθετο</ion-label>
+        <ion-input name="surname" type="surname" minlength="3" ngModel required ></ion-input>
+        <ion-icon class="map" name="people" slot="start"></ion-icon>
+   
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input  name="mail" type="email"   pattern=".+@gmail.com" size="30" placeholder="p.x example@gmail.com" ngModel required ></ion-input>
+        <ion-icon class="map" name="mail" slot="start"></ion-icon>
+        
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input name="User_password" type="password" minlength="6" ngModel required ></ion-input>
+        <ion-icon class="map" name="key" slot="start"></ion-icon>        
+      </ion-item>
+      <ion-button type="submit" expand="block"  [disabled]="form.invalid" >Submit</ion-button>
+    </div>
+    </form>
+    </div>
+</ion-content>

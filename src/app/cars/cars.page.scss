@@ -11,7 +11,7 @@ ion-header{
     margin: auto;
     width:100%;
     
-    background-color: lightgray;
+    background-color: lightseagreen;
 }
 .CarsCards{
   position: relative;
@@ -19,7 +19,7 @@ ion-header{
     margin: auto;
     width:100%;
     height:auto;
-    background-color: lightgray;
+    background-color: lightseagreen;
   }
   .carClass{
     text-align: left;
@@ -31,7 +31,7 @@ ion-header{
       text-align: center;
     }
   }
-  .map{
+  .map1{
     position: relative;
     left:40%;
     top:15%;
@@ -39,6 +39,20 @@ ion-header{
     color:black;
     opacity:80%;
    }
+   .map{
+    position: relative;
+    font-size: 25px;
+    color:black;
+    opacity:80%;
+   }
   .imgLogo{
     background-image: url('./LogoMakr-52eUU7.png');
+  }
+  .card{
+    background-color:lightgray;
+        position: relative;
+    margin-top: 30%;
+  }
+  .cards{
+   background-color:lightgray;
   }

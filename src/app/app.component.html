@@ -5,7 +5,7 @@
     <ion-header>
       <ion-toolbar>
         <img src="https://www.logolynx.com/images/logolynx/83/83926e17372ac03d71e799e3d1812f73.png">
-        <h1 style="text-align: center;">Welcome </h1>
+          <h3 style="text-align: center;" *ngIf="data" >Welcome <br>{{data.mail}}</h3>
       </ion-toolbar>
     </ion-header>
     <ion-content >

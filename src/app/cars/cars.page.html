@@ -5,12 +5,7 @@
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    
   </ion-toolbar>
 
 </ion-header>
@@ -18,7 +13,7 @@
 <ion-content>
   <div class="BackgroundPanel">
     <form #form="ngForm" (ngSubmit)="getValues(form)">
-    <ion-card>
+    <ion-card class="card">
       <h1 style="text-align: center;">Rent A Car</h1>
      <h1 style="text-align: center;"> Μπορείς να βρεις όποιο όχημα επιθυμείς στην περιοχή που βρίσκεσαι.Έυκολα και Γρήγορα!</h1>
       <ion-item>
@@ -34,25 +29,24 @@
   <div *ngFor="let header of OnlyCitiesOffice" >
     <div *ngIf="form.value.Location==header.City">
     <h1 style="text-align: center;"> Welcome to {{ header.City}}</h1>
-    <ion-icon name="location" class="map"></ion-icon>
+    <ion-icon name="location" class="map1"></ion-icon>
   </div>
   </div>
 
   <form #form="ngForm" (ngSubmit)="getValues(form)">
-    <ion-card *ngFor="let user of AllCarOffice" (click)=" openDetailsWithQueryParams(user)">
+    <ion-card *ngFor="let user of AllCarOffice" (click)=" openDetailsWithQueryParams(user)" class="cards">
     <div *ngIf="form.value.Location==user.City">
     <img src='{{user.image}}'/>
-    <ion-card-header >
-      <ion-card-title value="name">{{user.office_name}}</ion-card-title>
-      <ion-card-subtitle value="city-address">{{user.City}}, {{ user.address}} </ion-card-subtitle>
-    </ion-card-header>
   
-    <ion-card-content value="comments">
-     email: {{user.email}}
-     <br>
-     Phone: {{user.phone}}
-    </ion-card-content>
-    <ion-button type="submit" expand="block" color="dark"  (click)=" openDetailsWithQueryParams(user)" >Περισσότερα...</ion-button>
+      <ion-card-title value="name" style="text-align: center;">{{user.office_name}}</ion-card-title>
+   
+      <p style="text-align: left;"> <ion-icon name="navigate" class="map"></ion-icon> {{user.City}}</p>
+      <p style="text-align: left;"> <ion-icon name="location" class="map"></ion-icon> {{user.address}}</p>
+      <p style="text-align: left;">    <ion-icon name="mail" class="map"></ion-icon> {{user.email}}</p>
+      <p style="text-align: left;"> <ion-icon name="call"class="map"></ion-icon> {{user.phone}}</p>
+      <p style="text-align: left;"><ion-icon name="logo-web-component"class="map"></ion-icon> Website: <a href="{{user.site}}">{{user.office_name}}</a></p>
+
+      <ion-button type="submit" expand="block" color="dark"  (click)=" openDetailsWithQueryParams(user)" >Περισσότερα...</ion-button>
   </div>
   </ion-card>
 </form>

@@ -59,6 +59,20 @@ export class CarRentPage implements OnInit {
     console.log(err);
    });
   }
+ 
+  openDetailsWithQueryParams(data,form,user){
+    console.log(data)
+    console.log(form.value)
+    console.log(user)
+    let nav:NavigationExtras={
+      queryParams:{
+        special:JSON.stringify(data),
+        special2:JSON.stringify(form.value),
+        special3:JSON.stringify(user)
+      }
+    }
+    this.route.navigate(['rentacar-reserved'],nav)
+  }
 
   
 }

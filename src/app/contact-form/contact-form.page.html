@@ -5,21 +5,16 @@
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="contactFormBackground">
-  <form #form="ngForm" (ngSubmit)="getValues(form)">
+  <form #form="ngForm" (ngSubmit)="SendEmail(form)">
     <div class="contactForm">
     <ion-list>
-      <h1 style="text-align: center;">Contact</h1>
+      <h1 style="text-align: center;">Επικοινωνία</h1>
       <h1 style="text-align: center;">Γράψτε μας τις Εντυπώσεις Σας..</h1>
     <ion-item>
       <ion-label position="floating">'Ονομα</ion-label>
@@ -30,16 +25,11 @@
       <ion-input name="surname" type="surname" ngModel required ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">E-mail</ion-label>
-      <ion-input name="email" type="email" ngModel required ></ion-input>
-    </ion-item>
-
-    <ion-item>
       <ion-label position="floating">Σχόλια</ion-label>
       <ion-textarea name="comment" placeholder="Write your Comment.." rows="5" cols="20" ngModel required></ion-textarea>
     </ion-item>
   </ion-list>
-    <ion-button type="submit" expand="block" >Submit</ion-button>
+    <ion-button (click)="getValues(form)" type="submit" expand="block" >Submit</ion-button>
   </div>
   </form>
 </div>

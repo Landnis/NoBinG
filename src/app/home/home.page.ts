@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { AlertController,Platform  } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import {LoadingController} from '@ionic/angular';
@@ -12,9 +12,11 @@ import {ApiService} from '../api.service';
 export class HomePage {
   AllHotels:any;
   Allactivities:any;  
-  constructor(private authService:AuthService,private router:Router,
+  LoginUsers:any;
+  data:any;
+  constructor(private activatedRoute:ActivatedRoute,private authService:AuthService,private router:Router,
     private alertCtrl:AlertController,public platform:Platform,public loadingControl:LoadingController,private api:ApiService) {
-      
+     
       this.getActivities();
       this. getAllHotels();
       this.platform.ready().then(()=>{
@@ -88,6 +90,7 @@ export class HomePage {
       //this.router.navigateByUrl('home');
   
     }
+   
     
    
 }

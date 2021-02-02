@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/hotel-results']" color="dark"> Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="Background">
+    <form #form="ngForm" (ngSubmit)="ReservedHotel(form)">
+  <ion-card *ngIf="data2">
+    <div class="CardBackground">
+    <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+   <h3 style="text-align: center;">Στοιχεία Χρήστη</h3>
+   <p>Όνομα: {{users.firstname}}</p>
+   <p>Επώνυμο:{{users.surname}}</p>
+   <p>Email : {{users.mail}}</p>
+   <h3 style="text-align: center;">Στοιχεία Ξενοδοχείου</h3>
+    <p>Όνομα Ξενοδοχείου: {{data2.Hotel_name}}</p>
+    <p>Email Ξενοδοχείου: {{data2.email}}</p>
+    <p>Τηλέφωνο Ξενοδοχείου: {{data2.Phone}}</p>
+    <p>Πόλη: {{data2.City}}</p>
+    <p>Κατηγορία Δωματίου: {{room.Category}}</p>
+    <p>Τιμή Δωματίου ανα Ημέρα: {{room.price}} €</p>
+    <p>Αριθμός Δωματίων: {{room.amount_rooms}}</p>
+    <p>Αριθμός Ατόμων: {{room.maxPeople}}</p>
+    <p> Ημερομηνία Check-In: {{checkIn}}</p>
+    <p>Ημερομηνία Check-Out: {{checkOut}}</p>
+    <ion-button type="submit"  expand="block" color="dark" >Κράτηση</ion-button>
+  </div>
+  </ion-card>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header  [translucent]="true"  class="HeaderBackground">
+  <ion-toolbar>
+    <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
+
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="" routerLink="/home">
+    </div>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="CardBackground">
+  <ion-card *ngIf="data" style="background-color:lightsteelblue">
+    
+      <img src="{{data.image}}" alt="">
+      <h1 style="text-align: center;">
+        {{data.restaurant_name}}
+      </h1>
+      <p style="text-align: left;"><ion-icon name="pin" class="map1"></ion-icon>{{data.city}}</p>
+      <p style="text-align: left;"><ion-icon name="location" class="map1"></ion-icon>{{data.city}}, {{data.address}}</p>
+      <p style="text-align: left;"> <ion-icon name="map" class="map1"></ion-icon>  Ιστοσελίδα: <a href="{{data.site}}">{{data.Hotel_name}}</a></p>
+      <p style="text-align: left;"> <ion-icon name="call" class="map1"></ion-icon> {{data.phone}}</p>
+
+    </ion-card>
+    
+    <form #form="ngForm" (ngSubmit)="getValues(form)" >
+    <ion-card style="background-color: lightsteelblue;">
+      <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+      
+      <ion-icon name="people" class="map1"></ion-icon>
+      <ion-label position="floating" >Αριθμός Ατόμων</ion-label>
+      <ion-input name="people" type="name" placeholder="Πληκτρολόγησε Τον Αριθμό Ατόμων" ngModel required ></ion-input>
+      <ion-icon name="calendar" class="map1"></ion-icon>
+      
+
+      <ion-label> Ημερομηνία</ion-label>
+      <ion-datetime  min="2021" max="2023"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YYYY"
+        monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="Whitch_Day" placeholder="Ημερομηνία Κράτησης" ngModel required></ion-datetime>
+        <ion-button type="submit" expand="block" (click)=" openDetailsWithQueryParams(data,form)" color="dark"   [disabled]="form.invalid" >Κράτηση</ion-button>      
+      </ion-card>
+  </form>
+  </div> 
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button routerLink="/home" color="primary">
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/hotels">
+      <ion-icon name="bed"></ion-icon>
+      <ion-label>Hotels</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/cars">
+      <ion-icon name="car"></ion-icon>
+      <ion-label>Rent a Car</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/activities">
+        <ion-icon name="american-football" color="primary"></ion-icon>
+        <ion-label>Activities</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+     </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

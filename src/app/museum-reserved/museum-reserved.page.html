@@ -1,0 +1,34 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/museum-results']" color="dark"> Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="Background">
+    <form #form="ngForm" (ngSubmit)="ReservedMuseums(form)">
+  <ion-card *ngIf="data">
+    <div class="CardBackground">
+    <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+   <h3 style="text-align: center;">Στοιχεία Χρήστη</h3>
+   <p>Όνομα: {{users.firstname}}</p>
+   <p>Επώνυμο:{{users.surname}}</p>
+   <p>Email : {{users.mail}}</p>
+   <h3 style="text-align: center;">Στοιχεία Μουσείου</h3>
+    <p>Όνομα Μουσείου: {{data.museum_name}}</p>
+    <p>Email Μουσείου: {{data.email}}</p>
+    <p>Πόλη: {{data.city}}</p>
+    <p>Τιμή Εισητηρίου: {{data.price}} €</p>
+    <p>Τηλέφωνο: {{data.phone}}</p>
+    <p> Ημερομηνία: {{date}}</p>
+    <ion-button type="submit" (click)="getValues()" expand="block" color="dark" >Κράτηση</ion-button>
+  </div>
+  </ion-card>
+  </form>
+</div>
+</ion-content>

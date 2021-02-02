@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true"  class="HeaderBackground">
  
     <ion-toolbar>
       <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
@@ -6,34 +6,81 @@
       <div class="imgLogo">
         <img src="./LogoMakr-52eUU7.png" alt="" routerLink="/home">
       </div>
-      <ion-buttons slot="end">
-        <ion-button (click)="openCart()">
-          
-          <ion-icon name="heart" slot="icon-only"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+      
     </ion-toolbar>
   
 </ion-header>
 
 <ion-content>
   <div class="CardBackground">
-    <ion-card *ngIf="data">
-      <ion-card-header>
-        <img src="{{data.Hotels_image}}" alt="">
-        <ion-card-title>
-          {{data.Hotel_name}}
-        </ion-card-title>
-        <ion-card-subtitle>
-          {{data.City}},{{data.Address}}
-        </ion-card-subtitle>
-      </ion-card-header>
+    <ion-card *ngIf="data" style="background-color:lightsteelblue;">
+        <img src="{{data.Hotels_image}}" alt="" width="100%">
+        <h2 style="text-align: center;">{{data.Hotel_name}}</h2>
+        
+        <p style="text-align: center;">
+          {{data.comments}}
+        </p>      
+        <p style="text-align: left;"> <ion-icon name="location" class="map1"></ion-icon> {{data.Address}}</p>
+        <p style="text-align: left;"> <ion-icon name="star-half" class="map1"></ion-icon>  Αστέρων: {{data.evaluation_stars}}</p>
+        <p style="text-align: left;"> <ion-icon name="map" class="map1"></ion-icon>  Ιστοσελίδα: <a href="{{data.site}}">{{data.Hotel_name}}</a></p>
+        <p style="text-align: left;"> <ion-icon name="pin" class="map1"></ion-icon>  Email:{{data.email}}</p>
+        <p style="text-align: left;"> <ion-icon name="call" class="map1"></ion-icon> {{data.Phone}}</p>
+        
+            </ion-card>
+    <div class="FormDetails">
       
-      
-      </ion-card>
+      <form #form="ngForm" (ngSubmit)="postRooms(form)" >
+        <ion-card style="background-color:lightsteelblue;">
+          <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+          <ion-icon name="key" class="map1"></ion-icon>
+          <ion-label >Είδος Δωματίων</ion-label>
+        <ion-select interface="popover" name="Category" placeholder="Είδος Δωματίου" ngModel required>
+          <ion-select-option value="Standard" class="brown-option">Κονονικό/ 30€</ion-select-option>
+          <ion-select-option value="Studio">Στούντιο/25€</ion-select-option>
+          <ion-select-option value="Villa">Σουίτα/70€</ion-select-option>
+          <ion-select-option value="Penthouse">Σουίτα νεόνυμφων/120€</ion-select-option>
+          
+        </ion-select>
+        <input type="hidden" name="price" ngModel required>
 
-      <a href="{{data.site}}">Site</a>
-       <ion-button type="submit" expand="block" color="dark"   >Περισσότερα...</ion-button>
+
+        <ion-icon  name="bed" class="map1"></ion-icon>
+        <ion-label>Αριθμός Κρεβατιών</ion-label>
+        <ion-select interface="popover" name="amount_rooms" placeholder="Αριθμός Δωματίων" ngModel required>
+          <ion-select-option value="1" >1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+        </ion-select>
+
+        <ion-icon  name="people" class="map1"></ion-icon>
+        <ion-label>Αριθμός Επισκεπτών</ion-label>
+        <ion-select interface="popover" name="maxPeople"placeholder="Αριθμός Επισκεπτών" ngModel required>
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+        </ion-select>
+
+        <ion-icon  name="calendar" class="map1"></ion-icon>
+        <ion-label>Check-In</ion-label>
+        <ion-datetime  min="2021" max="2023"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YYYY"
+        monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="CheckIn" placeholder="Check-In" ngModel required></ion-datetime>
+       
+        <ion-icon  name="calendar" class="map1" ></ion-icon>
+        <ion-label>Check-Out</ion-label>
+        <ion-datetime  min="2021-02" max="2023"
+          [dayShortNames]="customDayShortNames"
+          displayFormat="DDD. MMM DD, YYYY"
+          monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="CheckOut" placeholder="Check-Out" ngModel required></ion-datetime>
+          <ion-button type="submit" expand="block" color="dark"   >Κράτηση</ion-button>
+
+        </ion-card>
+
+      </form>
+    </div>
   </div>
   
 </ion-content>

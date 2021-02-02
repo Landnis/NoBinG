@@ -5,19 +5,14 @@
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+   
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 <div class="activitiesBackground">
   <form #form="ngForm" (ngSubmit)="getValues(form)">
-    <ion-card style="background-color: lightyellow;">
+    <ion-card  class="card">
       <h1 style="text-align: center;">Activities</h1>
      <h1 style="text-align: center;">Ανακάλυψε την Δραστηριότητα που σου Αρέσει στο ταξίδι σου στην Β.Ελλάδα.</h1>
       <ion-item>
@@ -41,8 +36,8 @@
     
   </div>
       <form #form="ngForm" (ngSubmit)="getActivity(form)">
-        <div class="ActicitiesCards">
-        <ion-card *ngFor="let user of Allactivities" (click)="openDetailsWithQueryParams(user)">
+        <div class="ActivitiesCards">
+        <ion-card *ngFor="let user of Allactivities" (click)="openDetailsWithQueryParams(user)" class="cards">
         <div *ngIf="form.value.Location==user.city">
         <img src='{{user.image}}'/>
         <ion-card-header >

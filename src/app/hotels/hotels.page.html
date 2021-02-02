@@ -5,12 +5,7 @@
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+   
   </ion-toolbar>
   
 </ion-header>
@@ -21,7 +16,7 @@
 <ion-content [fullscreen]="true">
   <div class="hotelsBackground">
     <form #form="ngForm" (ngSubmit)="getValues(form)">
-    <ion-card>
+    <ion-card class="SearchCard">
       <h1 style="text-align: center;">Hotels</h1>
      <h1 style="text-align: center;">Βρες Ξενοδοχείο Στην Περιοχή της Αρεσκείας Σου..</h1>
       <ion-item>
@@ -34,6 +29,7 @@
     </ion-card>
 
   </form>
+ 
 </div>
   <div class="Background">
   <ion-row *ngFor="let header of image" class="category-block">  
@@ -61,10 +57,10 @@
         {{user.comments}}
       </p>
 
-      <p style="text-align: left;"> <ion-icon name="location"></ion-icon> {{user.Address}}</p>
-      <p style="text-align: left;"> <ion-icon name="star-half"></ion-icon>  Αστέρων: {{user.evaluation_stars}}</p>
-      <p style="text-align: left;"> Ιστοσελίδα: <a href="{{user.site}}">{{user.Hotel_name}}</a></p>
-      <p style="text-align: left;"> <ion-icon name="call"></ion-icon> {{user.Phone}}</p>
+      <p style="text-align: left;"> <ion-icon name="location"  class="map1"></ion-icon> {{user.Address}}</p>
+      <p style="text-align: left;"> <ion-icon name="star-half"  class="map1"></ion-icon>  Αστέρων: {{user.evaluation_stars}}</p>
+      <p style="text-align: left;"> <ion-icon name="logo-web-component"  class="map1"></ion-icon> Ιστοσελίδα: <a href="{{user.site}}" >{{user.Hotel_name}}</a></p>
+      <p style="text-align: left;"> <ion-icon name="call"  class="map1"></ion-icon> {{user.Phone}}</p>
       <ion-button type="submit" expand="block"color="light" (click)="openDetailsWithQueryParams(user)" >Περισσότερα</ion-button>
     
   </div>

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" class="Homeheader">
+  <ion-toolbar>
+    <div class="imgLogo">
+      <img src="./LogoMakr-52eUU7.png" alt="">
+    </div>
+    <ion-buttons slot="start">
+      <ion-button  [routerLink]="['/car-rent']" color="dark"> Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="Background">
+    <form #form="ngForm" (ngSubmit)="ReservedVehicle(form)">
+  <ion-card >
+    <div class="CardBackground">
+    <h1 style="text-align: center;">Στοιχεία Κράτησης</h1>
+   <h3 style="text-align: center;">Στοιχεία Χρήστη</h3>
+   <p>Όνομα: {{users.firstname}}</p>
+   <p>Επώνυμο:{{users.surname}}</p>
+   <p>Email : {{users.mail}}</p>
+   <h3 style="text-align: center;">Στοιχεία Γραφείου Ενοικεάσεως</h3>
+   <div class="data2" *ngIf="data2">
+    <p>Όνομα Γραφείου: {{data2.office_name}}</p>
+    <p>Email Γραφείου: {{data2.email}}</p>
+    <p>Τηλέφωνο Γραφείου: {{data2.phone}}</p>
+    <p>Πόλη: {{data2.City}}</p>
+    <p>Κατηγορία Οχήματος: {{vehicle.category}}</p>
+    <p>Τιμή Οχήματος ανα Μέρα: {{vehicle.price}} €</p>
+    <p>Μάρκα Οχήματος: {{vehicle.marka}}</p>
+    <p> Ημερομηνία Check-In: {{checkIn}}</p>
+    <p>Ημερομηνία Check-Out: {{checkOut}}</p>
+    </div>
+    
+    <ion-button type="submit" (click)="getValues(form)" expand="block" color="dark" >Κράτηση</ion-button>
+  </div>
+  </ion-card>
+  </form>
+</div>
+</ion-content>

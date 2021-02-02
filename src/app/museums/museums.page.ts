@@ -44,7 +44,7 @@ async getCitiesOfMuseums(){
   }
   async getValues(form):Promise<void>{
     console.log("Topothesia: "+form.value.MuseumLocation) 
-    this.router.navigateByUrl('hotels-search');
+    this.router.navigateByUrl('museum-results');
   }
   openDetailsWithQueryParams(user){
     console.log(user)

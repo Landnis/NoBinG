@@ -1,31 +1,43 @@
-<ion-header>
+<ion-header  [translucent]="true"  class="HeaderBackground">
   <ion-toolbar>
     <ion-menu-button menu="main-menu" slot="start"> <ion-icon name="menu" ></ion-icon></ion-menu-button>
 
     <div class="imgLogo">
       <img src="./LogoMakr-52eUU7.png" alt="" routerLink="/home">
     </div>
-    <ion-buttons slot="end">
-      <ion-button (click)="openCart()">
-        
-        <ion-icon name="heart" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="data">
-    <ion-card-header>
+  <div class="CardResultBackground">
+  <ion-card *ngIf="data"  style="background-color:lightsteelblue;" class="card">
       <img src="{{data.image}}" alt="">
-      <ion-card-title>
-        {{data.museum_name}}
-      </ion-card-title>
-      <ion-card-subtitle>
-        {{data.city}},{{data.Address}}
-      </ion-card-subtitle>
-    </ion-card-header>
+      <h1 style="text-align: center;">{{data.museum_name}}</h1>
+      <p style="text-align: left;"> <ion-icon name="pricetag" class="map1"></ion-icon>Τιμή:{{data.price}} €</p>
+      <p style="text-align: left;"> <ion-icon name="location" class="map1"></ion-icon> Διεύθυνση: {{data.address}}</p>
+      <p style="text-align: left;"> <ion-icon name="pin" class="map1"></ion-icon>  Πόλη: {{data.city}}</p>
+      <p style="text-align: left;"> <ion-icon name="map" class="map1"></ion-icon>  Ιστοσελίδα: <a href="{{data.site}}"> {{data.museum_name}}</a></p>
+      <p style="text-align: left;"> <ion-icon name="call" class="map1"></ion-icon> {{data.phone}}</p>
     </ion-card>
+
+  <form #form="ngForm" (ngSubmit)="getValues(form)" >
+    <ion-card style="background-color: lightsteelblue;">
+      <h1 style="text-align: center;"> Στοιχεία Κράτησης</h1>
+      <ion-icon name="calendar" class="map1"></ion-icon>
+      <ion-label> Ημερομηνία</ion-label>
+      <ion-datetime  min="2021" max="2023"
+      [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YYYY"
+        monthShortNames="January, February, March, April, May, June, July, August, September, Oktober, November, December" name="reservDay" placeholder="Ημερομηνία Κράτησης" ngModel required></ion-datetime>
+        <ion-button type="submit" expand="block" color="dark" (click)="openDetailsWithQueryParams(data,form)" [disabled]="form.invalid" >Κράτηση</ion-button>
+      
+    </ion-card>
+  </form>         
+    
+  </div>
+
+ 
     
 </ion-content>
 <ion-footer>

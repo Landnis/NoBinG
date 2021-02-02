@@ -11,25 +11,26 @@
 <ion-content>
  <div class="loginBackground">
   
-<form #form="ngForm" (ngSubmit)="loginUser(form)" class="loginForm">
+<form #form="ngForm" (ngSubmit)="getLoginUsers(form)"  class="loginForm" >
   <h1 style="text-align: center;">Log In</h1>
   <div class="imgForm">
   <img src="https://www.logolynx.com/images/logolynx/2f/2f3480d89dab7a9a372c77857c9604d9.png">
   </div>
   <div>
     <ion-item>
-      <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+      <ion-input  name="email" type="email"   pattern=".+@gmail.com" size="30" placeholder="p.x example@gmail.com" ngModel required ></ion-input>
+      <ion-icon class="map" name="person-circle" slot="start"></ion-icon>
     </ion-item>
     <ion-item>
-      <ion-input name="password" type="password" placeholder="password" ngModel required></ion-input>
+      <ion-input name="password" type="password" minlength="6" placeholder="password" ngModel required></ion-input>
+      <ion-icon class="map" name="key" slot="start"></ion-icon>
     </ion-item>
     <div style="text-align:center;margin:auto;">
-      <ion-button type="submit" [disabled]="form.invalid">Sign In</ion-button>
+      <ion-button  type="submit" [disabled]="form.invalid" >Sign In</ion-button>
     </div>
   </div>
 </form>
 <div style="text-align:center;margin:auto;">
-<h6 (click)="goToReset()">Forget Password</h6>
 <h6 (click)="goTosignUp()">Sign Up</h6>
 </div>
 </div>
